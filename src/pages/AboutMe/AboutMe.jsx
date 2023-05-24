@@ -66,7 +66,7 @@ export function AboutMe() {
             style={{ textDecoration: 'none'}}
           >
             <Button variant="contained" disabled={!data[0].cv_link}>
-              <Typography sx={{ fontFamily: "fantasy" }}>
+              <Typography sx={{ fontFamily: "fantasy !important" }}>
                 Download CV
               </Typography>
             </Button>
