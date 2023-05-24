@@ -3,21 +3,23 @@ import { useQueries, useQuery } from "react-query";
 import axios from "axios";
 import { baseUrl } from "../../utilities/users-api";
 import { useState, useEffect } from "react";
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import MailIcon from '@mui/icons-material/Mail';
-import Stack from '@mui/material/Stack';
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import MailIcon from "@mui/icons-material/Mail";
+import Stack from "@mui/material/Stack";
 import IconButton from "@mui/material/IconButton";
 
 export function Contact() {
   const contactQueries = useQueries([
     {
-      queryKey: 'contacts',
-      queryFn: () => axios.get(`${baseUrl}contacts/`).then(response => response.data),
+      queryKey: "contacts",
+      queryFn: () =>
+        axios.get(`${baseUrl}contacts/`).then((response) => response.data),
     },
     {
-      queryKey: 'socials',
-      queryFn: () => axios.get(`${baseUrl}socials/`).then(response => response.data),
+      queryKey: "socials",
+      queryFn: () =>
+        axios.get(`${baseUrl}socials/`).then((response) => response.data),
     },
   ]);
 
@@ -31,41 +33,54 @@ export function Contact() {
   //need to call socialQuery.data[0].name
   return (
     <>
-      {socialQuery.error || contactQuery.error ? (
+      {socialQuery.error ? (
         <div>An error has occurred</div>
       ) : (
-        socialQuery.data && contactQuery.data && (
-          <Stack direction="row" spacing={4} justifyContent="center" alignItems="center" marginTop={4}>
+        socialQuery.data &&
+        socialQuery && (
+          <Stack
+            direction="row"
+            spacing={4}
+            justifyContent="center"
+            alignItems="center"
+            marginTop={4}
+          >
             {socialQuery.data.map((d) => {
-              if (d.name.toLowerCase() === 'linkedln') {
+              if (d.name.toLowerCase() === "linkedln") {
                 return (
                   <a href={d.link} target="_blank" rel="noopener noreferrer">
                     <IconButton>
-                      <LinkedInIcon fontSize='large'/>
+                      <LinkedInIcon fontSize="large" />
                     </IconButton>
                   </a>
                 );
               }
-              if (d.name.toLowerCase() === 'github') {
+              if (d.name.toLowerCase() === "github") {
                 return (
                   <a href={d.link} target="_blank" rel="noopener noreferrer">
                     <IconButton>
-                      <GitHubIcon fontSize='large'/>
+                      <GitHubIcon fontSize="large" />
                     </IconButton>
                   </a>
                 );
               }
               return null;
             })}
-
-            <a href={`mailto:${contactQuery.data[0].email}`}>
-              <IconButton>
-                <MailIcon fontSize='large'/>
-              </IconButton>
-            </a>
           </Stack>
         )
       )}
+      <Stack
+        direction="row"
+        spacing={4}
+        justifyContent="center"
+        alignItems="center"
+        marginTop={4}
+      ></Stack>
+      <a href={`mailto:${contactQuery.data[0].email}`}>
+        <IconButton>
+          <MailIcon fontSize="large" />
+        </IconButton>
+      </a>
     </>
   );
 }

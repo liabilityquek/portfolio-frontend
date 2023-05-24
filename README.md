@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=800px height=600px src="./images/harold.jpg" alt="Harold's Portfolio"></a>
+ <img width=800px height=600px src="./images/portfolio.png" alt="Harold's Portfolio"></a>
 </p>
 
 <h3 align="center">Portfolio</h3>
