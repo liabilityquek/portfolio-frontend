@@ -63,7 +63,7 @@ export function AboutMe() {
             download="Harold's CV"
             target="_blank"
             rel="noreferrer"
-            
+            style={{ textDecoration: 'none'}}
           >
             <Button variant="contained" disabled={!data[0].cv_link}>
               <Typography sx={{ fontFamily: "fantasy" }}>
