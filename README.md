@@ -13,7 +13,7 @@ Portfolio project using Vite and Django
 
 ## Deployment
 
-The application is deployed on Vercel. Click<a href="https://portfolio-frontend-omega-rose.vercel.app/">here</a> to access the application.
+The application is deployed on Vercel. Click <a href="https://portfolio-frontend-omega-rose.vercel.app/">here</a> to access the application.
 The backend is deployed on <a href="https://portfolio-backend-k8gu.onrender.com">Render</a>.
 
 ## Technologies & Tools Used
