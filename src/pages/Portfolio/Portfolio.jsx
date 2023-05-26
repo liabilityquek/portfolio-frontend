@@ -2,7 +2,7 @@ import React from "react";
 import Typography from "@mui/material/Typography";
 import { ShowPortfolio } from "./ShowPortfolio";
 
-export function Portfolio() {
+export default function Portfolio() {
   return (
     <>
     <div>

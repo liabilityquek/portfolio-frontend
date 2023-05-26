@@ -5,7 +5,7 @@ import { baseUrl } from "../../utilities/users-api";
 import Chip from "@mui/material/Chip";
 import Box from "@mui/material/Box";
 
-export function Skills() {
+export default function Skills() {
   const { isLoading, error, data, isFetching } = useQuery("portfolio", () =>
     axios.get(`${baseUrl}portfolios/`).then((response) => {
       console.log(JSON.stringify(response.data), null, 2);

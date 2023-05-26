@@ -9,7 +9,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import Stack from '@mui/material/Stack';
 import IconButton from "@mui/material/IconButton";
 
-export function Contact() {
+export default function Contact() {
   // const contactQueries = useQueries([
   //   {
   //     queryKey: 'contacts',
