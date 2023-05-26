@@ -80,7 +80,7 @@ export default function AboutMe() {
                 borderRadius: "50%",
                 cursor:'pointer',
               }}
-              onClick={ handleLogin }
+              // onClick={ handleLogin }
             />
           ) : <img
           alt="Harold Quek"
@@ -91,7 +91,7 @@ export default function AboutMe() {
             borderRadius: "50%",
             cursor:'pointer',
           }}
-          onClick={ handleLogin }
+          // onClick={ handleLogin }
         />}
         </p>
         <p>
