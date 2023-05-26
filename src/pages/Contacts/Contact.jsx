@@ -10,62 +10,72 @@ import Stack from '@mui/material/Stack';
 import IconButton from "@mui/material/IconButton";
 
 export function Contact() {
-  const contactQueries = useQueries([
-    {
-      queryKey: 'contacts',
-      queryFn: () => axios.get(`${baseUrl}contacts/`).then(response => response.data),
-    },
-    {
-      queryKey: 'socials',
-      queryFn: () => axios.get(`${baseUrl}socials/`).then(response => response.data),
-    },
-  ]);
+  // const contactQueries = useQueries([
+  //   {
+  //     queryKey: 'contacts',
+  //     queryFn: () => axios.get(`${baseUrl}contacts/`).then(response => response.data),
+  //   },
+  //   {
+  //     queryKey: 'socials',
+  //     queryFn: () => axios.get(`${baseUrl}socials/`).then(response => response.data),
+  //   },
+  // ]);
 
-  const contactQuery = contactQueries[0];
-  const socialQuery = contactQueries[1];
+  // const contactQuery = contactQueries[0];
+  // const socialQuery = contactQueries[1];
 
-  if (contactQuery.isLoading || socialQuery.isLoading) return "Loading...";
+  // if (contactQuery.isLoading || socialQuery.isLoading) return "Loading...";
 
-  if (contactQuery.error) return <div>An error has occurred</div>;
+  // if (contactQuery.error) return <div>An error has occurred</div>;
 
   //need to call socialQuery.data[0].name
+  const { isLoading, error, data, isFetching } = useQuery("socials", () =>
+  axios.get(`${baseUrl}socials/`).then((response) => {
+    console.log(JSON.stringify(response.data), null, 2);
+    return response.data;
+  })
+);
+if (isLoading) return "Loading...";
+
+if (error) return "An error has occurred: " + error.message;
+
   return (
     <>
-      {socialQuery.error || contactQuery.error ? (
-        <div>An error has occurred</div>
-      ) : (
-        socialQuery.data && contactQuery.data && (
-          <Stack direction="row" spacing={4} justifyContent="center" alignItems="center" marginTop={4}>
-            {socialQuery.data.map((d) => {
-              if (d.name.toLowerCase() === 'linkedln') {
-                return (
-                  <a href={d.link} target="_blank" rel="noopener noreferrer">
-                    <IconButton>
-                      <LinkedInIcon fontSize='large'/>
-                    </IconButton>
-                  </a>
-                );
-              }
-              if (d.name.toLowerCase() === 'github') {
-                return (
-                  <a href={d.link} target="_blank" rel="noopener noreferrer">
-                    <IconButton>
-                      <GitHubIcon fontSize='large'/>
-                    </IconButton>
-                  </a>
-                );
-              }
-              return null;
-            })}
+      {data ? (
+        <Stack direction="row" spacing={4} justifyContent="center" alignItems="center" marginTop={4}>
+          {data.map((d) => {
+            if (d.name.toLowerCase() === 'linkedln') {
+              return (
+                <a href={d.link} target="_blank" rel="noopener noreferrer">
+                  <IconButton >
+                  <LinkedInIcon fontSize='large'/>
+                  </IconButton>
+                </a>
+              );
+            }
+            if (d.name.toLowerCase() === 'github') {
+              return (
+                <a href={d.link} target="_blank" rel="noopener noreferrer">
+                  <IconButton >
+                  <GitHubIcon fontSize='large'/>
+                  </IconButton>
+                </a>
+              );
+            }
+            if (d.name.toLowerCase() === 'gmail') {
+              return (
+                <a href={d.link} target="_blank" rel="noopener noreferrer">
+                  <IconButton >
+                  <MailIcon fontSize='large'/>
+                  </IconButton>
+                </a>
+              );
+            }
+            return null;
+          })}
 
-            <a href={`mailto:${contactQuery.data[0].email}`}>
-              <IconButton>
-                <MailIcon fontSize='large'/>
-              </IconButton>
-            </a>
-          </Stack>
-        )
-      )}
+        </Stack>
+      ) : null}
     </>
   );
 }
