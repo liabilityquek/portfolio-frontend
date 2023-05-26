@@ -27,7 +27,6 @@ The backend is deployed on <a href="https://portfolio-backend-k8gu.onrender.com"
 <li>Postgres</li>
 <li>PgAdmin</li>
 <li>Vite</li>
-<li>Moments</li>
 <li>JWT</li>
 <li>Postman</li>
 
@@ -55,4 +54,10 @@ Various sources which I have seek guidance from:
 <li><a href=https://code.visualstudio.com/docs/python/tutorial-django>Setting up a Django project</a>
 </li>
 <li><a href=https://render.com/docs/deploy-django#manual-deployment>Deploying Django on Render</a>
+</li>
+<li><a href=https://community.auth0.com/t/i-getting-expecting-a-pem-formatted-key/52055/6>Django authentication for JWT Token from Auth0</a>
+</li>
+<li><a href=https://www.programcreek.com/python/example/81618/rest_framework.authentication.get_authorization_header>Django rest-framework authentication</a>
+</li>
+<li><a href=https://testdriven.io/blog/django-render>Deploying Postgres on Render</a>
 </li>
