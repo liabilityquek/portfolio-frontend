@@ -5,6 +5,7 @@ import Box from "@mui/material/Box";
 import { QueryClient, QueryClientProvider } from "react-query";
 import Typography from "@mui/material/Typography";
 import LightingMode from "../components/LightingMode";
+import { Analytics } from '@vercel/analytics/react';
 
 const AboutMe = React.lazy(() => import("./AboutMe/AboutMe"));
 const Skills = React.lazy(() => import("./Skills/Skills"));
@@ -85,5 +86,6 @@ export function App() {
         </Box>
       </LightingMode>
     </QueryClientProvider>
+    <Analytics />
   );
 }
