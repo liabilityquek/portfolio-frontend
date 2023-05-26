@@ -16,6 +16,7 @@ const queryClient = new QueryClient();
 
 export function App() {
   return (
+    <>
     <QueryClientProvider client={queryClient}>
       <LightingMode>
         <CssBaseline />
@@ -87,5 +88,7 @@ export function App() {
       </LightingMode>
     </QueryClientProvider>
     <Analytics />
+    </>
+
   );
 }
