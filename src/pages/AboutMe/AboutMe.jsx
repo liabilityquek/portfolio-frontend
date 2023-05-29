@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Error from '../../components/Error'
 import Loading from '../../components/Loading'
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function AboutMe() {
   const [text, setText] = useState("");
