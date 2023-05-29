@@ -52,8 +52,7 @@ export default function PortfolioCard({ d, error }) {
           // height="230"
           image={
             (() => {
-              console.log('Project title: ', d.project_title.toLowerCase());
-              console.log('Condition match: ', d.project_title.toLowerCase().includes('credit assessment'));
+              
               if (d.project_title.toLowerCase().includes('credit assessment')) {
                 return creditFormImage;
               } else if (d.project_image === '') {

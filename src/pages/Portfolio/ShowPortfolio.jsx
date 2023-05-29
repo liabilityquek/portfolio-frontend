@@ -15,7 +15,6 @@ export function ShowPortfolio({ itemsPerPage, user }) {
   const { isLoading, error, data, isFetching } = useQuery("portfolio", () =>
     axios.get(`${baseUrl}portfolios/`).then((response) => {
       console.log(JSON.stringify(response.data), null, 2);
-      console.log("data", data);
       return response.data;
     })
   );
