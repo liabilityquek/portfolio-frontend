@@ -61,7 +61,8 @@ export function ShowPortfolio({ itemsPerPage, user }) {
         ) : null}
       </div>
     );
-  } else {
+  } 
+  if(user === undefined) {
     return (
       <div>
         {data && data.length > 0 ? (
