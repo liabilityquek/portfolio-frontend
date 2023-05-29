@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, useEffect, Suspense } from 'react'
+import React, { useState, useEffect, Suspense } from "react";
 import NavBar from "./../components/NavBar";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
@@ -12,15 +11,11 @@ import AdminNavBar from "./../components/Admin/AdminNavBar";
 import { Routes, Route } from "react-router-dom";
 import Loading from "../components/Loading";
 import Main from '../../src/pages/Admin/Main/Main'
-import AboutMe from "./AboutMe/AboutMe";
-import Skills from "./Skills/Skills";
-import Contact from "./Contacts/Contact";
-import Portfolio from "./Portfolio/Portfolio";
 
-// const AboutMe = React.lazy(() => import("./AboutMe/AboutMe"));
-// const Skills = React.lazy(() => import("./Skills/Skills"));
-// const Contact = React.lazy(() => import("./Contacts/Contact"));
-// const Portfolio = React.lazy(() => import("./Portfolio/Portfolio"));
+const AboutMe = React.lazy(() => import("./AboutMe/AboutMe"));
+const Skills = React.lazy(() => import("./Skills/Skills"));
+const Contact = React.lazy(() => import("./Contacts/Contact"));
+const Portfolio = React.lazy(() => import("./Portfolio/Portfolio"));
 
 const queryClient = new QueryClient();
 
@@ -55,7 +50,7 @@ export function App() {
 
             <Box mt={8}>
               <div id="about">
-                {/* <Suspense fallback={<Loading />}> */}
+                <Suspense fallback={<Loading />}>
                   <Typography
                     variant="h2"
                     align="center"
@@ -65,7 +60,7 @@ export function App() {
                   >
                     <AboutMe />
                   </Typography>
-                {/* </Suspense> */}
+                </Suspense>
               </div>
             </Box>
             <Box mt={10}>
@@ -79,9 +74,9 @@ export function App() {
                 >
                   PORTFOLIO
                 </Typography>
-                {/* <Suspense fallback={<Loading />}> */}
+                <Suspense fallback={<Loading />}>
                   <Portfolio />
-                {/* </Suspense> */}
+                </Suspense>
               </div>
             </Box>
             <Box mt={10}>
@@ -95,9 +90,9 @@ export function App() {
                 >
                   TECH STACK
                 </Typography>
-                {/* <Suspense fallback={<Loading />}> */}
+                <Suspense fallback={<Loading />}>
                   <Skills />
-                {/* </Suspense> */}
+                </Suspense>
               </div>
             </Box>
             <Box mt={10}>
@@ -111,9 +106,9 @@ export function App() {
                 >
                   CONNECT WITH ME
                 </Typography>
-                {/* <Suspense fallback={<Loading />}> */}
+                <Suspense fallback={<Loading />}>
                   <Contact />
-                {/* </Suspense> */}
+                </Suspense>
               </div>
             </Box>
           </LightingMode>
