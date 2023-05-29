@@ -6,7 +6,7 @@ import Loading from "../../../../components/Loading";
 import Error from "../../../../components/Error";
 import ContactTable from "./ContactTable";
 import DeleteContent from './../../../../components/Admin/DeleteContent';
-import EditContent from './../../../../components/Admin/DeleteContent';
+import EditContent from './../../../../components/Admin/EditContent';
 
 export default function AdminContact({ user }) {
   const { isLoading, error, data, isFetching } = useQuery("socials", () =>
