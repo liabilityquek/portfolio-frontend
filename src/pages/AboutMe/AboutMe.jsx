@@ -81,7 +81,7 @@ export default function AboutMe() {
                 width: "max-width: 100%",
                 height: 300,
                 borderRadius: "50%",
-                cursor:'pointer',
+                
               }}
               onClick={ handleLogin }
             />
@@ -92,7 +92,7 @@ export default function AboutMe() {
             width: "max-width: 100%",
             height: 300,
             borderRadius: "50%",
-            cursor:'pointer',
+            
           }}
           onClick={ handleLogin }
         />}
@@ -103,7 +103,7 @@ export default function AboutMe() {
             download="Harold's CV"
             target="_blank"
             rel="noreferrer"
-            style={{ textDecoration: 'none', cursor:'default'}}
+            style={{ textDecoration: 'none'}}
             
           >
             <Button variant="contained" disabled={ !data || !data[0]}>
