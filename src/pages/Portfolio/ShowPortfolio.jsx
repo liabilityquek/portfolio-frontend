@@ -27,7 +27,7 @@ export function ShowPortfolio({ itemsPerPage, user }) {
   if (isLoading || !data) return <Loading />;
   if (error) return <Error />;
 
-  if (user !== undefined) {
+  if (user !== undefined || user !== null || user !== '') {
     return (
       <div>
         {data && data.length > 0 ? (
@@ -62,7 +62,7 @@ export function ShowPortfolio({ itemsPerPage, user }) {
       </div>
     );
   } 
-  if(user === undefined) {
+  else {
     return (
       <div>
         {data && data.length > 0 ? (
