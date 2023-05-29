@@ -4,6 +4,8 @@ import axios from "axios";
 import { baseUrl } from "../../utilities/users-api";
 import Chip from "@mui/material/Chip";
 import Box from "@mui/material/Box";
+import Error from './../../components/Loading';
+import Loading from './../../components/Loading';
 
 export default function Skills() {
   const { isLoading, error, data, isFetching } = useQuery("portfolio", () =>
@@ -28,9 +30,8 @@ export default function Skills() {
     }
   }, [data]);
 
-  if (isLoading || !data) return "Loading...";
-  if (error) return "An error has occurred: " + error.message;
-
+  if (isLoading || !data) return <Loading />;
+  if (error) return <Error />;
   return (
     <div>
       {data && techStack.length ? (

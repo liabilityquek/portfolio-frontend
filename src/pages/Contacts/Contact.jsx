@@ -8,6 +8,8 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import MailIcon from '@mui/icons-material/Mail';
 import Stack from '@mui/material/Stack';
 import IconButton from "@mui/material/IconButton";
+import Loading from './../../components/Loading';
+import Error from './../../components/Error';
 
 export default function Contact() {
   // const contactQueries = useQueries([
@@ -35,9 +37,10 @@ export default function Contact() {
     return response.data;
   })
 );
-if (isLoading) return "Loading...";
+if (isLoading) return <Loading />;
 
-if (error) return "An error has occurred: " + error.message;
+if (error) return <Error />;
+
 
   return (
     <>

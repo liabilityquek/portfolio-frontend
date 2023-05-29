@@ -5,6 +5,8 @@ import { baseUrl } from "../../utilities/users-api";
 import PortfolioCard from "./PortfolioCard";
 import { Pagination } from "@mui/material";
 import Grid from "@mui/material/Grid";
+import Loading from './../../components/Loading';
+import Error from './../../components/Loading';
 
 export function ShowPortfolio({ itemsPerPage }) {
   const { isLoading, error, data, isFetching } = useQuery("portfolio", () =>
@@ -20,8 +22,8 @@ export function ShowPortfolio({ itemsPerPage }) {
     setPage(value);
   };
 
-  if (isLoading || !data) return "Loading...";
-  if (error) return "An error has occurred: " + error.message;
+  if (isLoading || !data) return <Loading />;
+  if (error) return <Error />;
 
   return (
     <div>

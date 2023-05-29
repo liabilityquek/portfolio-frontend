@@ -29,6 +29,7 @@ The backend is deployed on <a href="https://portfolio-backend-k8gu.onrender.com"
 <li>Vite</li>
 <li>JWT</li>
 <li>Postman</li>
+<li>auth0</li>
 
 <br>
 

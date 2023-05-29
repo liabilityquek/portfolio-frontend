@@ -5,11 +5,13 @@ import { baseUrl } from "../../utilities/users-api";
 import { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import Error from '../../components/Error'
+import Loading from '../../components/Loading'
 
 export default function AboutMe() {
   const [text, setText] = useState("");
   const [index, setIndex] = useState(0);
-  // const { user, isAuthenticated, loginWithRedirect } = useAuth0();
+  const { user, isAuthenticated, loginWithRedirect } = useAuth0();
   const [fullText, setFullText] = useState(null);
   
   const { isLoading, error, data, isFetching } = useQuery("aboutMe", () =>
@@ -33,32 +35,32 @@ export default function AboutMe() {
     }
   }, [fullText, index]);
 
-  // useEffect(() => {
-  //   if (isAuthenticated) {
-  //     // Send the user object to your Django backend
-  //     axios.post(`${baseUrl}login/`, user)
-  //     .then(response => {
-  //       // Handle response
-  //       console.log(JSON.stringify(response.data), null, 2);
-  //     })
-  //       .catch(error => {
-  //         // Handle error
-  //         console.error(error);
-  //       });
-  //   }
-  // }, [isAuthenticated, user]);
+  useEffect(() => {
+    if (isAuthenticated) {
+      // Send the user object to your Django backend
+      axios.post(`${baseUrl}login/`, user)
+      .then(response => {
+        // Handle response
+        console.log(JSON.stringify(response.data), null, 2);
+      })
+        .catch(error => {
+          // Handle error
+          console.error(error);
+        });
+    }
+  }, [isAuthenticated, user]);
 
   
-  if (isLoading) return "Loading...";
+  if (isLoading) return <Loading />;
 
-  if (error) return "An error has occurred: " + error.message;
+  if (error) return <Error />;
 
 
-  // const handleLogin = () => {
-  //   if (!isAuthenticated) {
-  //     loginWithRedirect();
-  //   }
-  // };
+  const handleLogin = () => {
+    if (!isAuthenticated) {
+      loginWithRedirect();
+    }
+  };
 
   return (
     <>
@@ -80,7 +82,7 @@ export default function AboutMe() {
                 borderRadius: "50%",
                 cursor:'pointer',
               }}
-              // onClick={ handleLogin }
+              onClick={ handleLogin }
             />
           ) : <img
           alt="Harold Quek"
@@ -91,7 +93,7 @@ export default function AboutMe() {
             borderRadius: "50%",
             cursor:'pointer',
           }}
-          // onClick={ handleLogin }
+          onClick={ handleLogin }
         />}
         </p>
         <p>
@@ -100,7 +102,7 @@ export default function AboutMe() {
             download="Harold's CV"
             target="_blank"
             rel="noreferrer"
-            style={{ textDecoration: 'none'}}
+            style={{ textDecoration: 'none', cursor:'default'}}
             
           >
             <Button variant="contained" disabled={ !data || !data[0]}>
@@ -110,7 +112,7 @@ export default function AboutMe() {
             </Button>
           </a>
         </p>
-        <div>{isFetching ? "Updating..." : ""}</div>
+        <div>{isFetching ? <Loading /> : ""}</div>
       </div>
     </>
   );
