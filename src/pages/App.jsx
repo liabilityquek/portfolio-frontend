@@ -118,18 +118,18 @@ export function App() {
     );
   }
 
-  // if (user) {
-  //   return (
-  //     <QueryClientProvider client={queryClient}>
-  //       <LightingMode>
-  //         <CssBaseline />
-  //         <AdminNavBar />
+  if (user) {
+    return (
+      <QueryClientProvider client={queryClient}>
+        <LightingMode>
+          <CssBaseline />
+          <AdminNavBar />
 
-  //         <Routes>
-  //           <Route path="/" element={<Main user={user} />} />
-  //         </Routes>
-  //       </LightingMode>
-  //     </QueryClientProvider>
-  //   );
-  // }
+          <Routes>
+            <Route path="/" element={<Main user={user} />} />
+          </Routes>
+        </LightingMode>
+      </QueryClientProvider>
+    );
+  }
 }
