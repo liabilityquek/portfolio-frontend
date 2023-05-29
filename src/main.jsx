@@ -5,6 +5,8 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { App } from './pages/App';
 import { Auth0Provider } from "@auth0/auth0-react";
 
+const queryClient = new QueryClient();
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Auth0Provider
   domain="dev-aw11eersfh2kqbzz.us.auth0.com"
