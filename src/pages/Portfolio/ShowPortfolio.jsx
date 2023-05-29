@@ -24,6 +24,7 @@ export function ShowPortfolio({ itemsPerPage, user }) {
     setPage(value);
   };
 
+  console.log(user, 'showPortfolio')
   if (isLoading || !data) return <Loading />;
   if (error) return <Error />;
 
