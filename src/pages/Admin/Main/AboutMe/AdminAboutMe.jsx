@@ -86,7 +86,7 @@ export default function AdminAboutMe({ user }) {
                 disabled={!data || !data[0] || !data[0].cv_link}
               >
                 <Typography sx={{ fontFamily: "fantasy !important" }}>
-                  Download CV;
+                  Download CV
 
                 </Typography>
               </Button>
