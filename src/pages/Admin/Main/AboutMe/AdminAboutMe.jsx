@@ -6,8 +6,8 @@ import { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import CreateContent from '../../../../components/Admin/CreateContent'
-import DeleteContent from '../../../../components/Admin/CreateContent'
-import EditContent from '../../../../components/Admin/CreateContent'
+import DeleteContent from '../../../../components/Admin/DeleteContent'
+import EditContent from '../../../../components/Admin/EditContent'
 import Loading from "../../../../components/Loading";
 import Error from "../../../../components/Error";
 
