@@ -1,4 +1,5 @@
-import React, { useState, useEffect, Suspense } from "react";
+import React from "react";
+import { useState, useEffect, Suspense } from 'react'
 import NavBar from "./../components/NavBar";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
