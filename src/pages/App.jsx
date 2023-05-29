@@ -10,7 +10,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import AdminNavBar from "./../components/Admin/AdminNavBar";
 import { Routes, Route } from "react-router-dom";
 import Loading from "../components/Loading";
-import Main from '../../src/pages/Admin/Main'
+import Main from '../../src/pages/Admin/Main/Main'
 
 const AboutMe = React.lazy(() => import("./AboutMe/AboutMe"));
 const Skills = React.lazy(() => import("./Skills/Skills"));

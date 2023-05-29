@@ -1,9 +1,9 @@
-import AdminAboutMe from "./AdminAboutMe";
-import AdminContact from "./Contacts/AdminContact";
+import AdminAboutMe from "../../../pages/Admin/Main/AboutMe/AdminAboutMe";
+import AdminContact from "../../../pages/Admin/Main/Contacts/AdminContact";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import Skills from "./../../Skills/Skills";
-import Portfolio from "../../Portfolio/Portfolio";
+import Skills from '../../../pages/Skills/Skills'
+import Portfolio from "../../../pages/Portfolio/Portfolio";
 
 export default function Main({ user }) {
   return (
