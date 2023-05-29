@@ -28,7 +28,8 @@ export function ShowPortfolio({ itemsPerPage, user }) {
   if (isLoading || !data) return <Loading />;
   if (error) return <Error />;
 
-  if (user !== undefined || user !== null || user !== '') {
+  if (user !== undefined && user !== null && user !== '')
+  {
     return (
       <div>
         {data && data.length > 0 ? (

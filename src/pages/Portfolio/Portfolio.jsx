@@ -2,7 +2,7 @@ import React from "react";
 import Typography from "@mui/material/Typography";
 import { ShowPortfolio } from "./ShowPortfolio";
 
-export default function Portfolio() {
+export default function Portfolio({ user }) {
   return (
     <>
     <div>
@@ -14,7 +14,7 @@ export default function Portfolio() {
         gutterBottom
         sx={{ color: "white", marginTop: 4 }}
       ></Typography>
-      <ShowPortfolio itemsPerPage={6}/>
+      <ShowPortfolio itemsPerPage={6} user={user}/>
       </div>
     </>
   );
