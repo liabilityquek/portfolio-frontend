@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Skills from '../../../pages/Skills/Skills'
 import Portfolio from "../../../pages/Portfolio/Portfolio";
+import React from "react"; 
 
 export default function Main({ user }) {
   return (
